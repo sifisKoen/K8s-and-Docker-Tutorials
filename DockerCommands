@@ -45,6 +45,10 @@ The command:
 
 docker exec -it d285cd302ccb  redis-cli
 
+How ever it's depends on what Container you want to run a command.
+For example on redis you can not run ls or echo.
+But on busybox you can run ls -l or mkdir or what command you want.
+
 
 3 ) If you want to go in to containers environment:
 
