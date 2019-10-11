@@ -13,7 +13,8 @@ In these files you can find:
 
 # TOPICS 
 1) [Set up an Kubernetes Custer](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)
-2) Docke Commands
+2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands)
+3) [Pods Commands]
 
 
 **The files are not complete yet but are in a good state for a beginner.**
