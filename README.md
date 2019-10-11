@@ -17,7 +17,7 @@ In these files you can find:
   1) [Set up an Kubernetes Custer](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)
   2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands)
   
-  2. Kubernetes Objects:
+2. Kubernetes Objects:
   3) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Pods)
   4) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/ReplicaAndReplicationController)
   5) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Deployments)
