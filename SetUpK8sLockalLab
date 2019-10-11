@@ -84,13 +84,13 @@ There are two ways to assign Static Ip Address.
   					 												
   		      															
   																	
- +===================================================================================================================+																	
++===================================================================================================================+																
   																	
   
 
   				    [-SWAP-]
    
- +===================================================================================================================+
++===================================================================================================================+
   																
   																
   	You MUST disable swap in order for the kubelet to work properly.							
@@ -119,11 +119,13 @@ There are two ways to assign Static Ip Address.
         															
         		Now comment the last line for the swap you can put comment with ( # )                                   
                                                                                         					
- +=====================================================================================================================+
+ +===================================================================================================================+
   
 
   
-Now we need to Intall the Docker to do that we need to go to this link --> [Docker page](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+Now we need to Intall the Docker to do that we need to go to this link --> [Docker page]
+
+(https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 
 
    It is for ubuntu linux  
@@ -143,10 +145,10 @@ Now we need to Intall the Docker to do that we need to go to this link --> [Dock
 	            ~~~
 		    \2/  $ sudo apt-get install \
     		     ~		apt-transport-https \
-			             	ca-certificates \
-					             curl \
-	    					 gnupg-agent \
-			software-properties-common
+			        ca-certificates \
+				curl \
+	    			gnupg-agent \
+         			software-properties-common
 		+==================================================+
 		|	Add Docker’s official GPG key  		   |
 		+==================================================+		
@@ -197,60 +199,60 @@ Now we need to Intall the Docker to do that we need to go to this link --> [Dock
 
 
 				**NOW YOU NEED TO INSTALL**
-==============================================================================================================================================================================
-		You will install these packages on all of your machines:
++===================================================================================================================+
+	You will install these packages on all of your machines:
 
-    		kubeadm: the command to bootstrap the cluster.
+    	kubeadm: the command to bootstrap the cluster.
           
-		kubelet: the component that runs on all of the machines in your cluster and does things like starting pods and containers.
+	kubelet: the component that runs on all of the machines in your cluster and does things like starting pods and containers.
 
-		kubectl: the command line util to talk to your cluster.	
+	kubectl: the command line util to talk to your cluster.	
 
 		                                   1st Step
-==================================================================================================================================================================================	
-								For Ubuntu, Debian
++===================================================================================================================+
+		For Ubuntu, Debian
 
-								apt-get update && apt-get install -y apt-transport-https curl
-								curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
-								cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-								deb https://apt.kubernetes.io/ kubernetes-xenial main
-								EOF
-								apt-get update
-								apt-get install -y kubelet kubeadm kubectl
-								apt-mark hold kubelet kubeadm kubectl
+		apt-get update && apt-get install -y apt-transport-https curl
+		curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+		cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+		deb https://apt.kubernetes.io/ kubernetes-xenial main
+		EOF
+		apt-get update
+		apt-get install -y kubelet kubeadm kubectl
+		apt-mark hold kubelet kubeadm kubectl
 
-										2nd Step ( Create our cluster)										
-=======================================================================================================================================================================================
+						    2nd Step ( Create our cluster)										
++===================================================================================================================+
 
-								Now create our cluster and initialize our master for cluster
+		 Now create our cluster and initialize our master for cluster
 
 
-										( A ) Master initialization
-==========================================================================================================================================================================================								
+						( A ) Master initialization
++===================================================================================================================+								
 										
 								
-								You must install a pod network add-on so that your pods can communicate with each other.
-								You can install only one pod network per cluster.
-								You can install a pod network add-on with the following command on the control-plane node / master node:
-								kubectl apply -f <add-on.yaml>
+	 You must install a pod network add-on so that your pods can communicate with each other.
+	 You can install only one pod network per cluster.
+	 You can install a pod network add-on with the following command on the control-plane node / master node:
+	 kubectl apply -f <add-on.yaml>
 								
-								Flannel is a pod network.
-								
-								For flannel to work correctly, you must pass --pod-network-cidr=10.244.0.0/16 to kubeadm init.
+	 Flannel is a pod network.
+	 							
+	 For flannel to work correctly, you must pass --pod-network-cidr=10.244.0.0/16 to kubeadm init.
 
-								Kubeadm uses the network interface associated with the default gateway to set the advertise address 
-								for this particular control-plane node’s API server. To use a different network interface, 
-								specify the --apiserver-advertise-address=<ip-address> argument to kubeadm init.
+	 Kubeadm uses the network interface associated with the default gateway to set the advertise address 
+	 for this particular control-plane node’s API server. To use a different network interface, 
+	 specify the --apiserver-advertise-address=<ip-address> argument to kubeadm init.
 
-								So the command you need execute is : 
+	  So the command you need execute is : 
 																		  <the master's node IP address>
 
-								$sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=<ip-address>
-								
-								              ( B ) Insert nodes to claster
-========================================================================================================================================================================================
+	$sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=<ip-address>
+	
+	                                                 ( B ) Insert nodes to claster
++===================================================================================================================+
 
-								After all of these you should take a message like :
+	   After all of these you should take a message like :
 
 								
 [init] Using Kubernetes version: vX.Y.Z
@@ -326,23 +328,24 @@ You need to excecute :
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 								
 
-Now go to all tha nodes and copy paste the token --> kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
-				It mast be like  --> kubeadm join 192.168.56.2:6443 --token t3w926.ep2cll3hfuje7utp --discovery-token-ca-cert-hash 	sha256:9a594c03c05ced648f1dfbb92d6da35e8eec8e04c8115a9908e0d2ba5bef808c
+Now go to all tha nodes and copy paste the token --> 
+kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+It mast be like  --> kubeadm join 192.168.56.2:6443 --token t3w926.ep2cll3hfuje7utp --discovery-token-ca-cert-hash sha256:9a594c03c05ced648f1dfbb92d6da35e8eec8e04c8115a9908e0d2ba5bef808c
 
-================================================================================================================================================================================Tue 08 Oct 2019 16:57:45 BST 
++===================================================================================================================+ 
 
 										Now you have the cluster.
 
 
 										To test if everithing work ok
-=================================================================================================================================================================================
++===================================================================================================================+
 								1) $kubectl get pods --all-namespaces 
 									To see all the processes at you cluster.
 								1) $kubectl get nodes
 									To see all cluster nodes.
 
 									
-=========================================================================THE END==================================================================================================
++================================================THE END=============================================================+
 
 
 
