@@ -16,12 +16,13 @@ In these files you can find:
 1.Tutorials: 
   1) [Set up an Kubernetes Custer](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)
   2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands)
+  3) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands)
   
 2.Kubernetes Objects:
-  1) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Pods)
-  2) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/ReplicaAndReplicationController)
-  3) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Deployments)
-  4) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands)
+  1) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Pods)
+  2) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/ReplicaSet)
+  3) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Deployments)
+  
 
 3.YAML files:
   1) [Pod](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/YAML%20Files/pod-definition.yml)
