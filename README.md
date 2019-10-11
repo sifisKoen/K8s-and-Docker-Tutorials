@@ -12,8 +12,8 @@ In these files you can find:
 - Some useful tips you may need.
 
 # TOPICS
-
-1) 
+1) Set up an Kubernetes Custer [Link](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)
+2) dgd
 
 
 **The files are not complete yet but are in a good state for a beginner.**
