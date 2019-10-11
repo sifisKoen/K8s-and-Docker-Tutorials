@@ -18,10 +18,10 @@ In these files you can find:
   2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands)
   
 2.Kubernetes Objects:
-  3) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Pods)
-  4) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/ReplicaAndReplicationController)
-  5) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Deployments)
-  6) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands)
+  1) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Pods)
+  2) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/ReplicaAndReplicationController)
+  3) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Deployments)
+  4) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands)
 
 3.YAML files:
   1) [Pod](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/YAML%20Files/pod-definition.yml)
