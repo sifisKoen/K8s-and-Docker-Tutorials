@@ -14,7 +14,10 @@ In these files you can find:
 # TOPICS 
 1) [Set up an Kubernetes Custer](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)
 2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands)
-3) [Pods Commands]
+3) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Pods)
+4) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/ReplicaAndReplicationController)
+5) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Deployments)
+6) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands)
 
 
 **The files are not complete yet but are in a good state for a beginner.**
