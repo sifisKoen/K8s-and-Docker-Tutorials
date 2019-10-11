@@ -57,153 +57,152 @@ There are two ways to assign Static Ip Address.
 
 			        [- Permanent IP assign-] 
   
-  +===========================================================================================================================================================================+
-  |																					      |
-  |																					      |
-  |		     																			      |
-  |     ~~~		     cat /etc/network/interfaces														      |
-  |	\2/ Type command --> vim /etc/network/interfaces  ( On sudo user )												      |
-  |	 ~		     																		      |
-  |			     You will see --> # interfaces(5) file used by ifup(8) and ifdown(8)									      |
-  |					      auto lo															      |
-  |                                           iface lo inet loopback													      |
-  |			      Or something like that.															      |
-  |			      Have only one interface for loopback.													      |
-  |			      Now we need to insert one more interface ( For our Static IP ).										      |
-  |			      																		      |
-  |			      We need to whrite something like these :  												      |
-  |					     # interfaces(5) file used by ifup(8) and ifdown(8)										      |			
-  |                                           auto lo															      |
-  |                                           iface lo inet loopback													      |
-  |					     # Configure enp0s8 interface												      |
-  |					     auto enp0s8 ( Automatically enables / turn on these interface in our case --> enp0s8 when the operating system boot up)          |
-  |					     iface enp0s8 inet static ( We say this particular interface --> enp0s8 will have a static IP  )				      |
-  |						   address 192.168.56.2 ( You need to specify the static IP you want to give to your device )       			      |
-  |						   netmask 255.255.255.0 ( You need to specify the network mask you want to give to your device )			      |
-  |						 															      |
-  |			      																		      |
-  |																					      |
-  |																					      |
-  |																					      |
-  +===========================================================================================================================================================================+
+  +===================================================================================================================+
+  														
+  																				      
+  	     																			      
+ ~~~		     cat /etc/network/interfaces														      
+  \2/ Type command --> vim /etc/network/interfaces  ( On sudo user )												      
+   ~		     																		      
+   You will see --> # interfaces(5) file used by ifup(8) and ifdown(8)									      
+  		     auto lo															
+                     iface lo inet loopback													
+  			Or something like that.														
+  		Have only one interface for loopback.												
+  		Now we need to insert one more interface ( For our Static IP ).										  
+  		      																	
+  		We need to whrite something like these :  												
+  		     # interfaces(5) file used by ifup(8) and ifdown(8)										      			
+                            auto lo															     
+                            iface lo inet loopback													     
+  		       # Configure enp0s8 interface												     
+  			auto enp0s8 ( Automatically enables / turn on these interface in our case --> enp0s8 when the operating system boot up)          
+  			iface enp0s8 inet static ( We say this particular interface --> enp0s8 will have a static IP  )				     
+  			address 192.168.56.2 ( You need to specify the static IP you want to give to your device )       			     
+  			netmask 255.255.255.0 ( You need to specify the network mask you want to give to your device )			      
+  					 												
+  		      															
+  																	
+ +===================================================================================================================+																	
+  																	
+  
 
   				    [-SWAP-]
    
-  +==============================================================================================================================================================================+
-  |																						 |
-  |																						 |
-  |			You MUST disable swap in order for the kubelet to work properly.											 |
-  |																						 |
-  |			You need to do two things to disable / switch off swap 													 |
-  |																						 |
-  |			- The first thing you need to do is to execute this command --> swapoff -a										 |
-  |																						 |
-  |			- Second step, you need to go to the fstab file.       					( every text editor you like e.x. : vi, vim, sublime ... )	 |
-  |								So to go there you need to execute the command --> vim /etc/fstab 						 |
-  |																						 |
-  |																						 |
-  |                                                          Third you will se something like :                   								 |
-  |							# /etc/fstab: static file system information.										 |
-  |							#															 |
-  |							# Use 'blkid' to print the universally unique identifier for a								 |
-  |							# device; this may be used with UUID= as a more robust way to name devices						 |
-  |							# that works even if disks are added and removed. See fstab(5).						  		 |
-  |							#															 |
-  |							# <file system> <mount point>   <type>  <options>       <dump>  <pass>							 |
-  |							# /was on														 |
-  |							# / was on /dev/sda1 during installation										 |
-  |							UUID=23688f67-7abf-4cf1-ad6c-fce1295e8ba6 /               ext4    errors=remount-ro 0       1				 |
-  |							/swapfile                                 none            swap    sw              0       0				 |
-  |																						 |
-  |																						 |
-  |							       Now comment the last line for the swap you can put comment with ( # )                                             |
-  |                                                                                						                                                 |
-  +==============================================================================================================================================================================+
+ +===================================================================================================================+
+  																
+  																
+  	You MUST disable swap in order for the kubelet to work properly.							
+ 																
+  	You need to do two things to disable / switch off swap 									
+  																
+  	- The first thing you need to do is to execute this command --> swapoff -a						
+  																
+  	- Second step, you need to go to the fstab file.  ( every text editor you like e.x. : vi, vim, sublime ... )	 
+  			So to go there you need to execute the command --> vim /etc/fstab 				
+  															
+        														
+                            Third you will se something like :                   						
+        	# /etc/fstab: static file system information.								
+      		#													
+        	# Use 'blkid' to print the universally unique identifier for a						
+        	# device; this may be used with UUID= as a more robust way to name devices				
+        		# that works even if disks are added and removed. See fstab(5).						
+        		#													
+        		# <file system> <mount point>   <type>  <options>       <dump>  <pass>					
+        		# /was on												
+        		# / was on /dev/sda1 during installation								
+        		UUID=23688f67-7abf-4cf1-ad6c-fce1295e8ba6 /               ext4    errors=remount-ro 0       1		
+        		/swapfile                                 none            swap    sw              0       0		
+        															
+        															
+        		Now comment the last line for the swap you can put comment with ( # )                                   
+                                                                                        					
+ +=====================================================================================================================+
   
 
   
   Now we need to Intall the Docker to do that we need to go to this link --> https://docs.docker.com/install/linux/docker-ce/ubuntu/   It is for ubuntu linux  
 								 
-								We need to execute all these commands at all of our nodes.
-								\/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/
-
-								Set up the repository :
+		We need to execute all these commands at all of our nodes.
+		\/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/
+				Set up the repository :
 											
-           									     +==================+
-									             |  Update the apt  |
-										~~~  +==================+
-										\1/   $ sudo apt-get update
-										 ~
-										    +====================================================+
-										    |  Install packages to allow apt to use a repository |
-										    +====================================================+
-										~~~
-										\2/  $ sudo apt-get install \
-    										 ~		apt-transport-https \
-												ca-certificates \
-												curl \
-												gnupg-agent \
-												software-properties-common
-										      +==================================================+
-										      |		Add Docker’s official GPG key  		 |
-										      +==================================================+		
-										~~~		
-										\3/  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-										 ~
-										      +============================================================+
-										      | Use the following command to set up the stable repository. |
-										      +============================================================+	
-										~~~
-										\3/  $ sudo add-apt-repository \
-										 ~   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-										     $(lsb_release -cs) \
-										     stable"
+         		+==================+
+			|  Update the apt  |
+		   ~~~  +==================+
+		   \1/   $ sudo apt-get update
+		    ~
+		    +====================================================+
+		    |  Install packages to allow apt to use a repository |
+		    +====================================================+
+	            ~~~
+		    \2/  $ sudo apt-get install \
+    		     ~		apt-transport-https \
+			             	ca-certificates \
+					             curl \
+	    					 gnupg-agent \
+			software-properties-common
+		+==================================================+
+		|	Add Docker’s official GPG key  		   |
+		+==================================================+		
+		      ~~~		
+		      \3/  $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+		       ~
+			 +============================================================+
+			 | Use the following command to set up the stable repository. |
+			 +============================================================+	
+			~~~
+			\3/  $ sudo add-apt-repository \
+			 ~   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+			     $(lsb_release -cs) \
+			     stable"
+   
+			+================================================+
+			|	Update the apt package index	         |
+			+================================================+
+			 ~~~
+			 \4/ $ sudo apt-get update  
+			  ~ 
+							
+	     		+================================================+
+			|Install the latest version of Docker Engine     |
+			| it is optionaly				 |
+		        +================================================+
+			 ~~~
+			 \5/ $ apt-cache madison docker-ce
+			  ~ 
+			 +================================================+
+			 | See the List of the versions are available     |
+			 |in your repo				          |
+			 +================================================+
+                         ~~~
+			 \6/ $ sudo apt-get install docker-ce=<VERSION_STRING>
+			  ~ 
+			  +================================================+
+			  | <VERSION_STRING> <-- put the docker version    |
+			  |you want to install			           |
+			  +================================================+
+                          ~~~
+			  \7/ $ sudo docker run hello-world
+			   ~  $ docker version
+			     +================================================+
+			     | Test if docker is intall properly              |
+			     |                        			      |
+		             +================================================+
 
-										      +================================================+
-										      |		Update the apt package index	       |
-										      +================================================+
-										 ~~~
-										 \4/ $ sudo apt-get update  
-										  ~ 
-										
-	     									      +================================================+
-										      |Install the latest version of Docker Engine     |
-									              | it is optionaly				       |
-										      +================================================+
-										 ~~~
-										 \5/ $ apt-cache madison docker-ce
-										  ~ 
-										      +================================================+
-										      | See the List of the versions are available     |
-									              |in your repo				       |
-										      +================================================+
-                                                                                 ~~~
-										 \6/ $ sudo apt-get install docker-ce=<VERSION_STRING>
-										  ~ 
-										      +================================================+
-										      | <VERSION_STRING> <-- put the docker version    |
-									              |you want to install			       |
-										      +================================================+
-                                                                                 ~~~
-										 \7/ $ sudo docker run hello-world
-										  ~  $ docker version
-										      +================================================+
-										      | Test if docker is intall properly              |
-									              |                        			       |
-										      +================================================+
 
-
-										NOW YOU NEED TO INSTALL
+				**NOW YOU NEED TO INSTALL**
 ==============================================================================================================================================================================
-							You will install these packages on all of your machines:
+		You will install these packages on all of your machines:
 
-    								kubeadm: the command to bootstrap the cluster.
+    		kubeadm: the command to bootstrap the cluster.
+          
+		kubelet: the component that runs on all of the machines in your cluster and does things like starting pods and containers.
 
-							        kubelet: the component that runs on all of the machines in your cluster and does things like starting pods and containers.
+		kubectl: the command line util to talk to your cluster.	
 
-						                kubectl: the command line util to talk to your cluster.	
-
-										1st Step
+		                                   1st Step
 ==================================================================================================================================================================================	
 								For Ubuntu, Debian
 
