@@ -22,6 +22,10 @@ In these files you can find:
   6) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands)
 
 2.YAML files:
+  1) [Pod](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/YAML%20Files/pod-definition.yml)
+  2) [Replicaset](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/YAML%20Files/replicaset-definition.yml)
+  3) [Services](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/YAML%20Files/service-definition.yml)
+  4) [Deployment](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/YAML%20Files/deployment-definition.yml)
     
   
 **The files are not complete yet but are in a good state for a beginner.**
