@@ -15,13 +15,13 @@ In these files you can find:
 # TOPICS 
 1.Tutorials: 
   1) [Set up an Kubernetes Custer](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)
-  2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands)
-  3) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands)
+  2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands.md)
+  3) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands.md)
   
 2.Kubernetes Objects:
-  1) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Pods)
-  2) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/ReplicaSet)
-  3) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Deployments)
+  1) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Pods.md)
+  2) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/ReplicaSet.md)
+  3) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Deployments.md)
   
 
 3.YAML files:
