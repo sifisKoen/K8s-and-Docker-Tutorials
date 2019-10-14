@@ -61,9 +61,9 @@ CMD ["npm", "start"]
 
 Now run the docker build command
 
-	```
+	
 	docker build .
-	```
+	
 
 ```
 Sending build context to Docker daemon  4.096kB
@@ -94,15 +94,15 @@ The warning are ok we have no problem now we build our image.
 
 Now tag the image with a name so you can remember.
 
-	```
+	
 	 docker build -t myfirstwebapp/simpleweb .
-	```
+	
 
 Now run the image.
 	
-	```
+	
 	docker run myfirstwebapp/simpleweb
-	```
+	
 
 You will see:
 
@@ -118,33 +118,33 @@ So you need to do a port mapping.
 
 So to do this you need to execute the command:
 	
-	```
+	
 	docker run -p 8080:8080 myfirstwebapp/simpleweb
-	```
+	
 
 This command say:
 	
-	```
+	
 	docker run -p < the port from outside world >:< forward to a port inside world > name of image
-	```
+	
 
 But you don't need to have the same port on two sections:
 	
-	```
+	
 	docker run -p 5000:8080 myfirstwebapp/simpleweb
-	```
+	
 
 Now go to your bawser and type:
 	
-	```
+	
 	lockalhost:8080
-	```
+	
 
 	OR
 
-	```
+	
 	lockalhost:5000
-	```
+	
 
 
 Ok now is a good idea to copy your files on an directory inside to you image.
@@ -152,9 +152,9 @@ So do not have conflicts with existing files and your new files.
 
 If you want to see your image shell and see all your root dirs you need to do:
 
-	```
+	
 	docker run -it myfirstwebapp/simpleweb sh
-	```
+	
 
 Now you can see alla your root files also you can see your files you have crate.
 In this case: Dockerfile, index.js, package.json.
@@ -166,15 +166,15 @@ To do this you need to tipe the command ```/ # exit```
 
 Now you need to go to your Dockerfile.
 
-	```
+	
 	vim Dockerfile
-	```
+	
 
 And put this line of code:
 
-	```
+	
 	WORKDIR /usr/app
-	```
+	
 
 Now your Dockerfile need be like:
 
@@ -198,15 +198,15 @@ Save and exit form the Dockerfile.
 
 Now you need to buld again your image.
 
-	```
+	
  	docker build -t myfirstwebapp/simpleweb .
-	```
+	
 
 Then run your image.
 
-	```
+	
 	docker run -p 8080:8080 myfirstwebapp/simpleweb
-	```
+	
 See the app run ok.
 
 ```
@@ -219,15 +219,15 @@ Listening on port 8080
 Open an new terminal window. Now we want to see where our files are.
 So we can go to sh of our image.
 
-	```
+	
 	docker run -it myfirstwebapp/simpleweb sh
-	```
+	
 Now we are to the directory where your files are copied.
 If you do ```ls``` you will see your files.
  
-	```
+	
 	/usr/app #ls
-	```
+	
 
 If you want to change one of your source code files you will not be able to see the
 changes.
@@ -257,23 +257,23 @@ is not changed.
 
 So that you have to do is to rebuild your image again.
 
-	```
+	
 	docker build -t myfirstwebapp/simpleweb .
-	```
+	
 
 And now run again your image.
 
-	```
+	
 	docker run -p 8080:8080 myfirstwebapp/simpleweb
-	```
+	
 Now go to your browser and refresh the page.
 
 
 If you want to do the preveus wark more efficient you need to go to the index.js
 
-	```
+	
 	vim index.js
-	```
+	
 
 Go and again the message.
 
@@ -297,9 +297,9 @@ app.listen(8080, () => {
 
 Then go to your Dockerfile and put one more COPY command.
 
-	```
+	
 	vim Dockerfile
-	```
+	
 
 ```
 #Specify a base image
