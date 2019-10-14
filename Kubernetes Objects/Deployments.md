@@ -15,54 +15,35 @@ selector. The template has a POD definition inside it.
 
 
 The fields:
-
-
-apiVersion: apps/v1
-
-kind: Deployment
-
-metadata:
-
-  name: myapp-delpoyment
-  
-  labels:
-  
-    app: myapp
-    
-    type: front-end
-    
-spec:
-
-  template:
-  
-    metadata:
-    
-      name: myapp-pod
-      
-      labels:
-      
-        app: myapp
-        
-        costcenter: iosif
-        
-        location: UK
-        
-        type: frontend
-    spec:
-        containers:
-          - name: nginx-container
-            image: nginx
-
-  replicas: 3
-
-  selector:
-    matchLabels:
+```YAML
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: myapp-delpoyment
+    labels:
       app: myapp
-      costcenter: iosif
-      location: UK
-      type: frontend
-
-
+      type: front-end
+  spec:
+    template:
+      metadata:
+        name: myapp-pod
+        labels:
+          app: myapp
+          costcenter: iosif
+          location: UK
+          type: frontend
+      spec:
+          containers:
+            - name: nginx-container
+              image: nginx
+     replicas: 3
+    selector:
+      matchLabels:
+        app: myapp
+        costcenter: iosif
+        location: UK
+        type: frontend
+```
 
 Once the file is ready run the kubectl create command and specify deployment
 definition file. Then run the kubectl get deployments command to see the newly
