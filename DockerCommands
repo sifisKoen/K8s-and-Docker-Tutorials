@@ -176,6 +176,45 @@ Example:
 
 docker run 490e8c783419
 
+=================================================================================
+
+Now if you want to put one more code line in your image:
+
+
+# Use an existing docker image as a base
+FROM alpine
+
+
+
+# Download and insall a dependency
+RUN apk add --update gcc  #new line
+RUN apk add --update redis
+
+
+# Tell the image what to do when is starts
+# as a container
+CMD ["redis-server"]
+
+
+And now you go to build again the image with command --> docker build .
+You will see tha the docker will understand that you don't make any
+changees but tha only change you made is : < RUN apk add --update gcc > command is the new
+command in your code.
+
+=================================================================================
+
+Now as we say before to run an image you need the image ID.
+Wich is like --> < 490e8c783419 >.
+This is difficult to remeber. So we can give name to our image or tag it.
+The command is:
+
+                           < Tags the image >
+        docker build -t myfirstdocker/redis:latest .
+
+
+                -t < Your DOcker ID > / < Repo / Project name > : < Version >
+
+
 
 
 
