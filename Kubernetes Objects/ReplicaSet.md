@@ -3,7 +3,7 @@ Replicas and create a replication controler:
 --> You need to write a .ylm file
 like :
 
-
+```YAML
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -33,17 +33,17 @@ spec:
       costcenter: iosif
       location: UK
       type: frontend
+```
 
 
 
-
-Te apiVersion is specific to what we are
+The apiVersion is specific to what we are
 creating. In this case replication controller is supported in kubernetes apiVersion v1.
 So we will write it as v1.
 The kind as we know is ReplicationController.
 
                                         
-So far, it has been very similar to howiii we created a POD in the previous section
+So far, it has been very similar to how we created a POD in the previous section.
 
 
 
@@ -60,25 +60,29 @@ the POD template
 Some Commands : 
 
 Create the replica Set:
+                    
                     < the name of your .yml file >
->kubectl create –f replicaset-definition.yml
+                ```kubectl create –f replicaset-definition.yml```
 
 Get your replica Controllers:
->kubectl get replicationcontroller
+
+  ```kubectl get replicationcontroller```
  
 See all your pods:
->kubectl get pods
+
+  ```kubectl get pods```
 
 To scale up your app / for more PODs :
 
-First:
-You can go to your file --> vim / (a path) /<filename>
-and go to change the replicas field.
-Second:
-Save your change and go out from vim: <Esc>, :wq! 
-Third:
-type the comand:
->kubectl replace -f replicaset-definition.yml
+1. First:
+    - You can go to your file --> vim / (a path) /<filename>
+      and go to change the replicas field.
+2. Second:
+    - Save your change and go out from vim: <Esc>, :wq! 
+3. Third:
+    - type the comand:
+      
+      ```kubectl replace -f replicaset-definition.yml```
 
 Second Way: #Don't_do_it
 
@@ -92,17 +96,18 @@ scaled your replicaset to have 6 replicas using the kubectl scale command and th
 as input.
 
 The comands:
->kubectl scale -–replicas=6 –f replicaset-definition.yml
 
->kubectl scale -–replicas=6 replicaset myapp-replicaset
+```kubectl scale -–replicas=6 –f replicaset-definition.yml```
+
+```kubectl scale -–replicas=6 replicaset myapp-replicaset```
 
 ONLY THE COMMANDS
 =======================================================================================
-  - kubectl create –f replicaset-definition.yml
-  - kubectl get replicaset
-  - kubectl delete replicaset myapp-replicaset   #Also deletes all underlying PODs
-  - kubectl replace -f replicaset-definition.yml
-  - kubectl scale –replicas=6 -f replicaset-definition.yml
+  - ```kubectl create –f replicaset-definition.yml```
+  - ```kubectl get replicaset```
+  - ```kubectl delete replicaset myapp-replicaset```   #Also deletes all underlying PODs
+  - ```kubectl replace -f replicaset-definition.yml```
+  - ```kubectl scale –replicas=6 -f replicaset-definition.yml```
 
 
 
