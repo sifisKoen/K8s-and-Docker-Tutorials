@@ -15,6 +15,7 @@ Full describe of all pods :
 	kubectl describe pods
 
 For exapmle
+```
 Name:         nginx-6db489d4b7-p7vlq
 Namespace:    default
 Priority:     0
@@ -58,11 +59,13 @@ Node-Selectors:  <none>
 Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
                  node.kubernetes.io/unreachable:NoExecute for 300s
 Events:          <none>
+```
 
 Create your own pod :
-
-kubectl create -f <name of yml file you create> e.x. --> pod-definition.yml
+	
+	kubectl create -f <name of yml file you create> e.x. --> pod-definition.yml
 
 Run :
->kubectl get pods ( to see if your pod is created )
+
+	kubectl get pods ( to see if your pod is created )
 
