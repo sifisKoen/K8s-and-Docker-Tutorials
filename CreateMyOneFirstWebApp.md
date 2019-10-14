@@ -2,7 +2,7 @@ My Fisrt Web App
 ===============
 
 
-So now we wan to crate a new app.
+So now we want to create a new app.
 
 We need some code.
 
