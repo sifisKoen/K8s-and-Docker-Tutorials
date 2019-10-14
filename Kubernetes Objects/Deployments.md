@@ -58,12 +58,11 @@ kubectl get pods command you will be able to see the pods with the name of the
 deployment and the replicaset.
 
 THE COMMANDS:
-
-> kubectl create –f deployment-definition.yml
-> kubectl get deployments #*
-> kubectl get replicaset
-> kubectl get pods
-> kubectl get all #*2
+ - kubectl create –f deployment-definition.yml
+ - kubectl get deployments #*
+ - kubectl get replicaset
+ - kubectl get pods
+ - kubectl get all #*2
 
 
 #* The kubectl get deployments command show you alla yous deployments.
