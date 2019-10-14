@@ -75,7 +75,7 @@ First:
 You can go to your file --> vim / (a path) /<filename>
 and go to change the replicas field.
 Second:
-Save your change and go aout from vim: <Esc>, :wq! 
+Save your change and go out from vim: <Esc>, :wq! 
 Third:
 type the comand:
 >kubectl replace -f replicaset-definition.yml
