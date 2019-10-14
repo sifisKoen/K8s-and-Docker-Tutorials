@@ -18,20 +18,35 @@ The fields:
 
 
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
+
   name: myapp-delpoyment
+  
   labels:
+  
     app: myapp
+    
     type: front-end
+    
 spec:
+
   template:
+  
     metadata:
+    
       name: myapp-pod
+      
       labels:
+      
         app: myapp
+        
         costcenter: iosif
+        
         location: UK
+        
         type: frontend
     spec:
         containers:
