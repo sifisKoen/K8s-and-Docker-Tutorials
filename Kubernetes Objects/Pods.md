@@ -1,3 +1,6 @@
+POD
+=========
+
 Deploy a POD :
 	
 	kubectl run nginx --image=nginx
