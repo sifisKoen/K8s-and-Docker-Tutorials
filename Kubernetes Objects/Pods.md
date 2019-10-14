@@ -68,4 +68,6 @@ Create your own pod :
 Run :
 
 	kubectl get pods ( to see if your pod is created )
+	
 
+[POD EXAMPLE](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/YAML%20Files/pod-definition.yml)
