@@ -14,7 +14,7 @@ In these files you can find:
 
 # TOPICS 
 1.Tutorials: 
-  1) [Set up an Kubernetes Custer](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)
+  1) [Set up an Kubernetes Custer](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/SetUpK8sLockalLab)--Under Construction.
   2) [Docker Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/DockerCommands.md)
   3) [Rollout Commands](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/RolloutCommands.md)
   
