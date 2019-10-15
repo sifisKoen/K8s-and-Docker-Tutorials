@@ -16,7 +16,7 @@ Second create the new files
 
 package.json
 
-```
+```JSON
 {
  "dependencies": {
    "express": "*"
@@ -29,7 +29,7 @@ package.json
 
 index.js
 
-```
+```JS
 const app = express();
 
 
