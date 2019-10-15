@@ -235,7 +235,7 @@ changes.
 For example if you want to change your ```index.js``` file an you want to put a new
 message like:
 
-```
+```JS
 const express = require ('express');
 
 
@@ -277,7 +277,7 @@ If you want to do the preveus wark more efficient you need to go to the index.js
 
 Go and again the message.
 
-```
+```JS
 const express = require ('express');
 
 
