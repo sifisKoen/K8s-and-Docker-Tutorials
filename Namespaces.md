@@ -1,18 +1,20 @@
 Namespaces
-
+========
 
 
 You can create a namespace.
 
-1)
-  Create a YAML file. ```Namespace-dev.yml```
-2)
-```
-  kubectl create -f Namespace-dev.yml
-```
+ 1)
+   Create a YAML file. ```Namespace-dev.yml```
+   
+ 2)
+   ```
+    kubectl create -f Namespace-dev.yml
+   ```
 OR
 ```
   kubectl create namespace dev
+  			<name of namespace you want to create>
 ```
 
 If you want to see the pods of other namespaces.
@@ -23,11 +25,13 @@ kubectl get pods –namespace=<name of the namespace>
 
 If you want you want to put a pod into a namespace.
 
-You can create a pod definition file and after go to your command line and:
+You can create a pod definition file and after go to your command line and exec the command:
 
 ```
 kubectl create -f <name of pod definition file YAML> --namespace=<name of the namespace>
 ```
+
+OR
 
 ```
 kubectl run redis –image=redis –generator=run-pod/v1 --namespace=finance
@@ -37,7 +41,7 @@ Now if you want you can insert the namespace into to your YAML pod file.
 
 Example :
 
-```
+```YAML
 apiVersion: v1
 kind: Pod
 metadata:
@@ -51,7 +55,7 @@ spec:
       image: nginx
 ```
 
-Now you can just type : 
+And now create the namespace.
 
 ```
 kubectl create -f <name of pod definition file YAML>
