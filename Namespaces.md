@@ -8,33 +8,33 @@ You can create a namespace.
    Create a YAML file ```Namespace-dev.yml```.
    
  2)
-   ```
-    kubectl create -f Namespace-dev.yml
+   ```console
+uname@PC:~$ kubectl create -f Namespace-dev.yml
    ```
 OR
-```
-  kubectl create namespace dev
+```console
+uname@PC:~$ kubectl create namespace dev
   			<name of namespace you want to create>
 ```
 
 If you want to see the pods of other namespaces.
 
-```
-kubectl get pods –namespace=<name of the namespace>
+```console
+uname@PC:~$ kubectl get pods –namespace=<name of the namespace>
 ```
 
 If you want you want to put a pod into a namespace.
 
 You can create a pod definition file and after go to your command line and exec the command:
 
-```
-kubectl create -f <name of pod definition file YAML> --namespace=<name of the namespace>
+```console
+uname@PC:~$ kubectl create -f <name of pod definition file YAML> --namespace=<name of the namespace>
 ```
 
 OR
 
-```
-kubectl run redis –image=redis –generator=run-pod/v1 --namespace=finance
+```console
+uname@PC:~$ kubectl run redis –image=redis –generator=run-pod/v1 --namespace=finance
 ```
 
 Now if you want you can insert the namespace into to your YAML pod file. 
@@ -57,23 +57,23 @@ spec:
 
 And now create the namespace.
 
-```
-kubectl create -f <name of pod definition file YAML>
+```console
+uname@PC:~$ kubectl create -f <name of pod definition file YAML>
 ```
 
 
 List all pods in all namespaces:
 
-```
-kubectl get pods --all-namespaces  
+```console
+uname@PC:~$ kubectl get pods --all-namespaces  
 ```
 
 
 For default you are at the default namespace.
 Now if you want to change to another namespace you need to exec this command.
 
-```
-kubectl config set-context $(kubectl config current-context) - - namespace=dev 
+```console
+uname@PC:~$ kubectl config set-context $(kubectl config current-context) - - namespace=dev 
 									<the name of namespace>
 ```
 
@@ -97,6 +97,6 @@ spec:
     limits.memory: 10Gi
 ```
 
-```
-kubectl create -f <name of quota YAML file>
+```console
+uname@PC:~$ kubectl create -f <name of quota YAML file>
 ```
