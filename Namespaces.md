@@ -48,7 +48,7 @@ metadata:
   name: myapp-pod
   labels:
     name: myapp-pod
-       namespace: dev
+    namespace: dev #the namespace
 spec:
   containers:
     - name: nginx-container
