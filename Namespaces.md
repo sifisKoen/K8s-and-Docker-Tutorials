@@ -76,3 +76,24 @@ Now if you want to change to another namespace you need to exec this command.
 kubectl config set-context $(kubectl config current-context) - - namespace=dev 
 									<the name of namespace>
 ```
+
+To limit the resources of the namespaces you need to write Quota. 
+
+Also if you want to create a resource quota you need to write a YAML file.
+
+
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-quota 
+  namespace: dev #specify the namespace for witch you create quota.
+spec:
+  hard: # Provide your limits.
+    pods: "10"
+    requests.cpu: "4"
+    requests.memory: 5Gi
+    limits.cpu: "10"
+    limits.memory: 10Gi
+  
+```
