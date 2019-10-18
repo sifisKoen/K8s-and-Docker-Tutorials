@@ -22,6 +22,7 @@ In these files you can find:
   1) [Pods](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Pods.md)
   2) [Replicas](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/ReplicaSet.md)
   3) [Deployments](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Deployments.md)
+  4) [Namespaces](https://github.com/sifisKoen/K8s-and-Docker-Tutorials/blob/master/Kubernetes%20Objects/Namespaces.md)
   
 
 3.YAML files:
