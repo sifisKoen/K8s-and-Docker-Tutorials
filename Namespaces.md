@@ -5,7 +5,7 @@ Namespaces
 You can create a namespace.
 
  1)
-   Create a YAML file. ```Namespace-dev.yml```
+   Create a YAML file ```Namespace-dev.yml```.
    
  2)
    ```
