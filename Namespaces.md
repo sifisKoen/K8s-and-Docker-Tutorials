@@ -82,7 +82,7 @@ To limit the resources of the namespaces you need to write Quota.
 Also if you want to create a resource quota you need to write a YAML file.
 
 
-```
+```YAML
 apiVersion: v1
 kind: ResourceQuota
 metadata:
@@ -95,5 +95,8 @@ spec:
     requests.memory: 5Gi
     limits.cpu: "10"
     limits.memory: 10Gi
-  
+```
+
+```
+kubectl create -f <name of quota YAML file>
 ```
